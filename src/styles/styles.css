@@ -1,0 +1,14 @@
+
+/* GENERAL */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color:#F8F8FF;
+    text-decoration: none;
+    font-family: "Nunito";
+}
+input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+}

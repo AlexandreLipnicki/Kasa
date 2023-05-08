@@ -1,0 +1,34 @@
+/* VARIABLES SCSS */
+
+$saumon: #FF6060;
+
+$xs: 12px;
+$s : 14px;
+$m : 18px;
+$l : 24px;
+$xl: 36px;
+$xxl:48px;
+
+$tab: 576px;
+$desktop: 768px;
+
+@mixin desktop-breakpoint {
+	@media screen and (min-width: #{$desktop}) {
+		@content;
+	}
+}
+
+@mixin tab-breakpoint {
+	@media screen and (min-width: #{$tab}) {
+		@content;
+	}
+}
+
+
+
+@include tab-breakpoint {
+
+}
+@include desktop-breakpoint {
+
+}

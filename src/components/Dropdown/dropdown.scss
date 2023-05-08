@@ -1,0 +1,64 @@
+@import '../../styles/variables.scss';
+
+.dropdown{
+    background-color: #F7F7F7;
+    max-width: 1100px;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 100%;
+    &_title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $saumon;
+        color: white;
+        border-radius: 10px;
+        padding: 10px 15px;
+        line-height: 142.6%;
+        cursor: pointer;
+        font-size: $xs;
+        @include tab-breakpoint {
+            font-size: $s;
+        }
+        @include desktop-breakpoint {
+            font-size: $m;
+        }
+    }
+    &_svg{
+        transition: all 0.2s ease-in-out;
+        width: $xs;
+        @include tab-breakpoint {
+            width: $s;
+        }
+        @include desktop-breakpoint {
+            width: $m;
+        }
+    }
+    .rotate {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease-in-out;
+    }
+    &_content{
+        font-size: $xs;
+        display: flex;
+        flex-direction: column;
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+        line-height: 142.6%;
+        padding: 20px;
+        color: #FF6060;
+        transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        @include tab-breakpoint {
+            font-size: $s;
+        }
+        @include desktop-breakpoint {
+            font-size: $m;
+        }
+    }
+    &_content_hidden{
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+    }
+}

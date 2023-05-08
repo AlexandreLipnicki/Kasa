@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 
-function NotFound() {
+import "./error404.scss"
+
+function Error404() {
 
   return (
     <main>
@@ -15,4 +17,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default Error404;

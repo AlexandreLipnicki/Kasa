@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import './variables.scss';
+
+/* GENERAL */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    position:relative;
+}::-webkit-scrollbar{
+    width:0px;
+}
+#root{
+    min-height: 100vh;
+}
+main{
+    padding:20px;
+    min-height: calc(100vh - 108px);
+    @include desktop-breakpoint {
+        padding:20px 100px;
+    }
+}

@@ -1,0 +1,44 @@
+/* HEADER */
+@import '../../styles/variables.scss';
+
+header{
+    padding: 20px 0px;
+    .logo{
+        height: 47px;
+        @include desktop-breakpoint {
+            height: 68px;
+        }
+    }
+    div{
+        height: 47px;
+        padding: 0px 20px;
+        font-size:1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include desktop-breakpoint {
+        height: 68px;
+        padding:20px 100px;
+        }
+    }
+    ul{
+        display: flex;
+        gap:20px;
+        @include tab-breakpoint {
+            gap:40px;
+        }
+        @include desktop-breakpoint {
+            gap:60px;
+        }
+        li.active a {
+            text-decoration: underline;
+          }
+    }
+    a{
+        color:$saumon;
+        font-size:$xs;
+        @include tab-breakpoint {
+            font-size:$l;
+        }
+    }
+}

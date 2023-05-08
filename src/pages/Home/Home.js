@@ -1,6 +1,8 @@
-import banner from "../img/banner_home.jpg";
-import Card from "../components/Card";
-import logements from "../data/logements.json";
+import banner from "../../img/banner_home.jpg";
+import Card from "../../components/Card/Card";
+import logements from "../../data/logements.json";
+
+import "./home.scss";
 
 function Home() {
 
@@ -8,9 +10,9 @@ function Home() {
     <main>
       <div className="banner">
         <img src={banner} alt="photo d'un magnifique paysage" />
-        <p>Chez vous, partout et ailleurs</p>
+        <p>Chez vous, <br className="wrap"/>partout et ailleurs</p>
       </div>
-      <div id="gallery">
+      <div className="gallery">
         {logements.map((logement) => (
           <Card key={logement.id} logement={logement} />
         ))}

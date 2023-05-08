@@ -1,0 +1,96 @@
+@import '../../styles/variables.scss';
+
+.logement{
+    color:$saumon;
+    &_info{
+        padding: 20px 0px;
+        @include tab-breakpoint {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    h1{
+        font-size: $m;
+        line-height: 142.6%;
+        @include tab-breakpoint {
+            font-size: $l;
+        }
+        @include desktop-breakpoint {
+            font-size: $xl;
+        }
+    }
+    &_location{
+        font-size: $s;
+        line-height: 142.6%;
+        @include tab-breakpoint {
+            font-size: $m;
+        }
+    }
+    &_tags{
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    &_tag{
+        color:white;
+        background-color: $saumon;
+        border-radius: 10px;
+        width: 115px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &_hostRating{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include tab-breakpoint {
+            flex-direction: column-reverse;
+        }
+    }
+    &_star{
+        height: $s;
+        width: $s;
+        @include tab-breakpoint {
+            height: $m;
+            width: $m;
+        }
+        @include desktop-breakpoint {
+            height: $l;
+            width: $l;
+        }
+    }
+    &_host{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        p{
+            font-size: $xs;
+            text-align: right;
+            @include tab-breakpoint {
+                font-size: $s;
+            }
+            @include desktop-breakpoint {
+                font-size: $m;
+            }
+        }
+        img{
+            height: 32px;
+            width: 32px;
+            border-radius:100%;
+            @include tab-breakpoint {
+                height: 48px;
+                width: 48px;
+            }
+            @include desktop-breakpoint {
+                height: 64px;
+                width: 64px;
+            }
+        }
+    }
+    .filled path{
+        fill: $saumon !important;
+    }
+
+}

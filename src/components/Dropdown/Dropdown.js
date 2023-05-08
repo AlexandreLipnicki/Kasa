@@ -1,56 +1,36 @@
-import React, { useState, useRef } from 'react';
+import { useState } from 'react';
 
-import "./style.css"
+import './dropdown.scss'
 
-function Collapse({ title, content }) {
-	const [setActive, setActiveState] = useState('')
-	const [setHeight, setHeightState] = useState('0px')
-	const [setRotate, setRotateState] = useState('collapse-icon')
-	const contentCollapse = useRef(null)
+export default function Dropdown({title, content}) {
 
-	const toggleCollapse = () => {
-		setActiveState(setActive === '' ? 'active' : '')
-		setHeightState(
-			setActive === 'active'
-				? '0px'
-				: `${contentCollapse.current.scrollHeight}px`
-		)
-		setRotateState(
-			setActive === 'active' ? 'collapse-icon' : 'collapse-icon rotate'
-		)
-	}
+    const [toggle, setToggle] = useState(false);
 
-	const contentArray = []
-	if (!Array.isArray(content)) {
-		contentArray.push(content)
-	} else {
-		for (let i = 0; i < 9; i++) {
-			contentArray.push(content[i])
-		}
-	}
+    const handleToggle = () => {
+        setToggle(!toggle);
+    }
 
-	return (
-		<div className="dropdown">
-			<button
-				className={`dropdown_btn ${setActive}`}
-				onClick={toggleCollapse}
-			>
-				<span>{title}</span>
-				<img src="#" className={`${setRotate}`} alt="" />
-			</button>
-			<div
-				ref={contentCollapse}
-				style={{ maxHeight: `${setHeight}` }}
-				className="dropdown-content"
-			>
-				<div className="dropdown-txt">
-					{contentArray.map((content, index) => (
-						<div key={`${content}-${index}`}>{content}</div>
-					))}
-				</div>
-			</div>
-		</div>
-	)
+    const svgClass = toggle ? 'dropdown_svg rotate' : 'dropdown_svg';
+
+
+    return (
+        <>
+            <div className="dropdown" >
+                <div className='dropdown_title' onClick={handleToggle} >
+                    {title}
+                    <svg className={svgClass} width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.7897 0.502064C11.4591 -0.167355 12.5462 -0.167355 13.2157 0.502064L23.4979 10.7843C24.1674 11.4538 24.1674 12.5409 23.4979 13.2103C22.8285 13.8797 21.7414 13.8797 21.072 13.2103L12 4.13835L2.92804 13.205C2.25862 13.8744 1.17148 13.8744 0.502064 13.205C-0.167355 12.5355 -0.167355 11.4484 0.502064 10.779L10.7843 0.496709L10.7897 0.502064Z" fill="white"/>
+                    </svg>
+                </div>
+                <div className={toggle ? 'dropdown_content' : 'dropdown_content_hidden'}>
+                    {Array.isArray(content) ? content.map((item, index) => {
+                        return (
+                            <p key={index}>{item}</p>
+                        )
+                    }) : content
+                    }
+                </div> 
+            </div>
+        </>
+    )
 }
-
-export default Collapse

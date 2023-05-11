@@ -1,4 +1,4 @@
-import banner from "../../img/banner_about.png";
+import banner from "../../img/banner_about.jpg";
 import Dropdown from "../../components/Dropdown/Dropdown";
 
 import "./about.scss";

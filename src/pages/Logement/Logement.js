@@ -1,5 +1,8 @@
 import { useParams, Navigate } from "react-router-dom";
 import logements from "../../data/logements.json";
+
+// composants
+import Carrousel from "../../components/Carrousel/Carrousel";
 import Dropdown from '../../components/Dropdown/Dropdown'
 
 import "./logement.scss"
@@ -8,6 +11,10 @@ export default function Logement() {
   const { id } = useParams(); // Récupération de l'ID du logement depuis l'URL
   const logement = logements.find((logement) => logement.id === id); // Recherche du logement correspondant dans le fichier JSON
   
+  if (!logement) {
+    return <Navigate to="/NotFound" />;
+  }
+
   const fullName = logement.host.name;
   const [prenom, nom] = fullName.split(' ');
 
@@ -19,15 +26,12 @@ export default function Logement() {
       stars.push()
     }}
 
-  if (!logement) {
-    return <Navigate to="/NotFound" />;
-  }
-
   return (
     <main>
       <div className="logement">
 
-        {/* élément carrousel */}
+      <Carrousel pictures={logement.pictures} />
+
 
         <div className="logement_info">
 

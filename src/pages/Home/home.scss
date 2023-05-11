@@ -13,6 +13,7 @@
     }
     @include desktop-breakpoint {
         height: 220px;
+        justify-content: center;
     }
     img {
         position: absolute;

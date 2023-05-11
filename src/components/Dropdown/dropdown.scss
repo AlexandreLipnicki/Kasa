@@ -1,11 +1,11 @@
 @import '../../styles/variables.scss';
 
 .dropdown{
-    background-color: #F7F7F7;
     max-width: 1100px;
-    border-radius: 10px;
     margin: 0 auto;
     width: 100%;
+    background-color: #F7F7F7;
+    border-radius: 10px;
     &_title{
         display: flex;
         justify-content: space-between;
@@ -15,6 +15,8 @@
         border-radius: 10px;
         padding: 10px 15px;
         line-height: 142.6%;
+        position:relative;
+        z-index:1;
         cursor: pointer;
         font-size: $xs;
         @include tab-breakpoint {
@@ -39,16 +41,23 @@
         transition: transform 0.3s ease-in-out;
     }
     &_content{
+        background-color: #F7F7F7;
+        border-radius: 0px 0px 10px 10px;
         font-size: $xs;
         display: flex;
         flex-direction: column;
-        visibility: visible;
-        opacity: 1;
-        height: auto;
+        visibility: hidden;
+        opacity: 0;
+        padding: 0px 20px;
+        max-height: 0;
+        overflow: hidden;
         line-height: 142.6%;
-        padding: 20px;
         color: #FF6060;
-        transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        transition: 
+            visibility 0.5s ease-in-out, 
+            opacity 0.5s ease-in-out, 
+            max-height 1s ease-in-out, 
+            padding 0.5s ease-in-out;
         @include tab-breakpoint {
             font-size: $s;
         }
@@ -56,9 +65,11 @@
             font-size: $m;
         }
     }
-    &_content_hidden{
-        visibility: hidden;
-        opacity: 0;
-        height: 0;
+    &_content_visible {
+        max-height: 10000px;
+        transition: max-height 0.5s ease-in-out;
+        opacity:1;
+        visibility: visible;
+        padding: 20px;
     }
 }

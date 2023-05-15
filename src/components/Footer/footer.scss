@@ -15,8 +15,14 @@ footer{
         filter: brightness(0%) invert(100%)
     }
     p{
-        font-size: 24px;
+        font-size: $xs;
         color:white;
         text-align: center;
+        @include tab-breakpoint {
+            font-size: $m;
+        }
+        @include desktop-breakpoint {
+            font-size: $l;
+        }
     }
 }

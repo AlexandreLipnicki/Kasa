@@ -10,14 +10,13 @@ export default function Dropdown({title, content}) {
         setToggle(!toggle);
     }
 
+    const dropdownClass = toggle ? 'dropdown' : 'dropdown dropdown_visible';
     const contentClass = toggle ? 'dropdown_content' : 'dropdown_content dropdown_content_visible';
     const svgClass = toggle ? 'dropdown_svg rotate' : 'dropdown_svg';
 
-
-
     return (
         <>
-            <div className="dropdown" >
+            <div className={dropdownClass} >
                 <div className='dropdown_title' onClick={handleToggle} >
                     {title}
                     <svg className={svgClass} width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">

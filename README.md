@@ -25,13 +25,13 @@
   </ol>
   
   <h2>Aperçu de l'application</h2>
-  <strong>Page d'accueil</strong>
+  <p><strong>Page d'accueil</strong></p>
   <img width="617" alt="Capture d'écran 2023-05-23 123329" src="https://github.com/AlexandreLipnicki/Kasa/assets/97740379/432054ae-9c57-4417-b351-35cec13927b7">
-  <strong>Page logement</strong>
+  <p><strong>Page logement</strong></p>
   <img width="616" alt="Capture d'écran 2023-05-23 123308" src="https://github.com/AlexandreLipnicki/Kasa/assets/97740379/e91a38e5-20a5-4e20-bd9d-9104438b16f2">
-  <strong>Page à propos</strong>
+  <p><strong>Page à propos</strong></p>
   <img width="616" alt="Capture d'écran 2023-05-23 123408" src="https://github.com/AlexandreLipnicki/Kasa/assets/97740379/73cc8aff-4bec-43b8-a9de-cbd62a23cb7c">
-  <strong>Page Error 404</strong>
+  <p><strong>Page Error 404</strong></p>
   <img width="619" alt="Capture d'écran 2023-05-23 123437" src="https://github.com/AlexandreLipnicki/Kasa/assets/97740379/1da2af7b-eb39-4c16-933b-4891d774e564">
 </body>
 </html>
